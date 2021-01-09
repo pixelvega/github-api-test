@@ -1,22 +1,21 @@
 import {
-  BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom';
 
 // views
-import App from 'components/pages/App/App';
 import Unknown from 'components/pages/Unknown/Unknown';
+import Home from 'components/pages/Home/Home';
+import TableResults from 'components/blocks/TableResults/TableResults';
 
 
 const Routes = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={App}></Route>
-        <Route path="" component={Unknown}></Route>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route exact path="/" component={Home}></Route>
+      <Route exact path="/search" component={TableResults}></Route>
+      <Route path="" component={Unknown}></Route>
+    </Switch>
   )
 }
 
