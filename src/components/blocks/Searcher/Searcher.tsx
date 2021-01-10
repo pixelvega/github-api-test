@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { SearcherContext } from 'context/SearcherContext';
 import { useHistory } from 'react-router-dom';
+import './Searcher.scss';
 
 export default function Searcher() {
   const history = useHistory();
@@ -26,14 +27,16 @@ export default function Searcher() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
+      className="header-search"
     >
       <label htmlFor="inputQuerySearcher">
         {/* <span className="label-text">Buscar repositorio por lenguaje...</span> */}
         <input
           type="text"
+          className="header-search__input"
           id="inputQuerySearcher"
           name="inputQuerySearcher"
-          placeholder="React"
+          placeholder="Search repositories..."
           ref={register({ required: true })}
           defaultValue={""}
         />

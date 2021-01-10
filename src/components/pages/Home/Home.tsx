@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { SearcherContext } from 'context/SearcherContext';
+import './Home.scss';
 
 export default function Home() {
   const { resetSearcherQuery } = useContext(SearcherContext);
@@ -9,8 +10,10 @@ export default function Home() {
   }, [])
 
   return (
-    <>
-      HOME
-    </>
+    <div className="Home">
+      <div className="bg-img"></div>
+      <h1>GitHub API Test</h1>
+      <p>Search repositories by language</p>
+    </div>
   )
 }

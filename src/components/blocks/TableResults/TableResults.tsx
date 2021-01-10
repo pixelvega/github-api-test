@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import { SearcherContext } from 'context/SearcherContext';
 import useGetRepositories from 'services/useGetRepositories';
 import { IGetRepositoriesResponse } from 'services/dto';
+import Spinner from '../Spinner/Spinner';
 
 export default function TableResults() {
   const { searcherQuery } = useContext(SearcherContext);
@@ -23,15 +24,22 @@ export default function TableResults() {
   }
 
   return (
-    <>
-      <p>RESULTADOS DE BÚSQUEDA PARA: {searcherQuery}</p>
-      {loading && "loading"}
+    <section>
+      {loading &&
+        <>
+          <h2>Buscando resultados para la búsqueda <em>"{searcherQuery}"</em></h2>
+          <Spinner />
+        </>
+      }
       {(error && !loading) &&
         <div>{error?.message}</div>
       }
       {!loading && !error && apiResults?.items &&
 
         <table>
+          <caption>
+            Resultados de búsqueda para <em>"{searcherQuery}"</em>
+          </caption>
           <thead>
             <tr>
               <th>Nombre</th>
@@ -59,6 +67,6 @@ export default function TableResults() {
           </tbody>
         </table>
       }
-    </>
+    </section>
   )
 }

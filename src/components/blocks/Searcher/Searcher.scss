@@ -1,0 +1,29 @@
+@import 'styles/common/variables.scss';
+
+.header-search {
+  &__input {
+    color: inherit;
+    border: 1px solid #444d56;
+    border-radius: 4px;
+    background-color: $color-header-bg;
+    height: 24px;
+    padding-left: 16px;
+    width: 200px;
+    transition: width .2s ease-in;
+    &::placeholder {
+      color: inherit;
+    }
+    &:focus {
+      width: 300px;
+      outline: none;
+      background-color: white;
+      color: $color-header-bg;
+    }
+    &:not(:focus) {
+      width: 200px;
+      background-color: $color-header-bg;
+      transition: width .2s ease-in;
+      transition: background-color .1s ease-in;
+    }
+  }
+}

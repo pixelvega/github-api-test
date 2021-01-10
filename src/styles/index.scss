@@ -1,3 +1,5 @@
+@import 'styles/common/variables.scss';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,65 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  color: $link-blue;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+  &:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $link-blue;
+  }  
+}
+
+section {
+  margin-top: 40px;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+em {
+  font-weight: 500;
+}
+
+table {
+  display: table;
+  width: calc(100% - 80px);
+  overflow-x: auto;
+  padding: 24px;
+  margin: 40px;
+  border-collapse: collapse;
+  caption {
+    padding: 16px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  td, th {
+    text-align: left;
+    padding: 16px;
+  }
+  thead {
+    tr {
+      &:last-child { 
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid gray;
+      &:last-child { 
+        border: none;
+      }
+ 
+    }
+  }
 }

@@ -1,0 +1,33 @@
+.Home {
+  position: relative;
+  height: 100%;
+  h1 {
+    padding-top: 40px;
+    margin: 0;
+  }
+  p {
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+}
+.bg-img {
+  z-index: -1;
+  height: calc(100vh - 67px);
+  background-image: linear-gradient(#e1f0ff, #24292e);
+  width: 100%;
+  position: absolute;
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    content: '';
+    height: 60%;
+    width: 100%;
+    background-image: url('../../../images/my-octocat-1610239465026.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
