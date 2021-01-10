@@ -13,6 +13,7 @@ export default function Searcher() {
     const inputQuerySearcher = values.inputQuerySearcher;
 
     if (inputQuerySearcher.length > 0 && inputQuerySearcher.length <= 256) {
+      // set query in context and redirect to results view
       setSearcherQuery(inputQuerySearcher);
       history.push(`/search/${inputQuerySearcher}`);
     }

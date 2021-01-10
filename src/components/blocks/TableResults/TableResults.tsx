@@ -15,8 +15,10 @@ export default function TableResults(props: any) {
   useEffect(() => {
     const querySearch = searcherQuery;
     if (querySearch.length > 0 && querySearch.length <= 256) {
+      // when searcherQuery  has value get results
       handleGetRepositories(querySearch);
     } else if (paramsQuery) {
+      // when refresh page set value in input
       setSearcherQuery(paramsQuery);
     }
   }, [searcherQuery])

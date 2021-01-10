@@ -7,7 +7,7 @@ const useGetRepositories = () => {
   const getRepositories = async (querySearch: string) => {
 
     try {
-      setLoading(true)
+      setLoading(true);
       const response = await fetch(`https://api.github.com/search/repositories?q=${querySearch}&page=1&per_page=10&sort=forks&order=asc`);
       if (!response.ok) throw await response.json();
       setError(null);
@@ -16,7 +16,7 @@ const useGetRepositories = () => {
 
     } catch (e) {
       setLoading(false);
-      setError(e)
+      setError(e);
       console.log('catch e ', e);
     }
 
