@@ -14,13 +14,13 @@ export default function Searcher() {
 
     if (inputQuerySearcher.length > 0 && inputQuerySearcher.length <= 256) {
       setSearcherQuery(inputQuerySearcher);
-      history.push('/search');
+      history.push(`/search/${inputQuerySearcher}`);
     }
   }
 
   useEffect(() => {
-    if (searcherQuery !== undefined && searcherQuery === '') {
-      setValue('inputQuerySearcher', '');
+    if (searcherQuery !== undefined) {
+      setValue('inputQuerySearcher', searcherQuery);
     }
   }, [searcherQuery])
 
@@ -30,7 +30,6 @@ export default function Searcher() {
       className="header-search"
     >
       <label htmlFor="inputQuerySearcher">
-        {/* <span className="label-text">Buscar repositorio por lenguaje...</span> */}
         <input
           type="text"
           className="header-search__input"

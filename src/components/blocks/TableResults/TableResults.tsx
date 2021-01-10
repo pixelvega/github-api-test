@@ -4,8 +4,9 @@ import useGetRepositories from 'services/useGetRepositories';
 import { IGetRepositoriesResponse } from 'services/dto';
 import Spinner from '../Spinner/Spinner';
 
-export default function TableResults() {
-  const { searcherQuery } = useContext(SearcherContext);
+export default function TableResults(props: any) {
+  const paramsQuery = props.match.params.querySearch;
+  const { searcherQuery, setSearcherQuery } = useContext(SearcherContext);
   const { getRepositories,
     loading,
     error } = useGetRepositories();
@@ -15,6 +16,8 @@ export default function TableResults() {
     const querySearch = searcherQuery;
     if (querySearch.length > 0 && querySearch.length <= 256) {
       handleGetRepositories(querySearch);
+    } else if (paramsQuery) {
+      setSearcherQuery(paramsQuery);
     }
   }, [searcherQuery])
 
