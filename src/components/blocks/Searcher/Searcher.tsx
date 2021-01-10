@@ -13,14 +13,15 @@ export default function Searcher() {
     const inputQuerySearcher = values.inputQuerySearcher;
 
     if (inputQuerySearcher.length > 0 && inputQuerySearcher.length <= 256) {
+      // set query in context and redirect to results view
       setSearcherQuery(inputQuerySearcher);
-      history.push('/search');
+      history.push(`/search/${inputQuerySearcher}`);
     }
   }
 
   useEffect(() => {
-    if (searcherQuery !== undefined && searcherQuery === '') {
-      setValue('inputQuerySearcher', '');
+    if (searcherQuery !== undefined) {
+      setValue('inputQuerySearcher', searcherQuery);
     }
   }, [searcherQuery])
 
@@ -30,7 +31,6 @@ export default function Searcher() {
       className="header-search"
     >
       <label htmlFor="inputQuerySearcher">
-        {/* <span className="label-text">Buscar repositorio por lenguaje...</span> */}
         <input
           type="text"
           className="header-search__input"

@@ -1,0 +1,10 @@
+@mixin title-section($color, $colorShadow) {
+  font-size: 2em;
+  color: $color;
+  text-shadow: 0px 0px 4px $colorShadow;
+}
+
+@mixin subtitle-section {
+  margin-top: 8px;
+  text-transform: uppercase;
+}

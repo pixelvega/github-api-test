@@ -6,6 +6,7 @@ export default function Home() {
   const { resetSearcherQuery } = useContext(SearcherContext);
 
   useEffect(() => {
+    // reset input value if value !== ''
     resetSearcherQuery()
   }, [])
 
