@@ -23,5 +23,20 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts?(x)"
+        ],
+        "rules": {
+          "eqeqeq": "warn"
+        }
+      }
+    ]
+  }
 }
